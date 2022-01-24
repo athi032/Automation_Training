@@ -13,7 +13,19 @@ Default Tags    tag01
 Force Tags    tag02
 
 *** Variables *** 
+<<<<<<< HEAD
 
+=======
+&{LOCATORS}=    frame=//*[@id="main"]/div[3]/iframe
+...             h1=css:#main > h1
+...             file=id:myFile
+...             jsNav=xpath://a[contains(@title,"JavaScript Tutorial")]
+...             new_window_btn=xpath://input[contains(@value,'Open a new window')]
+...             identifier=id:identifierId
+...             identifierNext=id:identifierNext
+...             pass=xpath://input[contains(@id="password")]
+...             passNext=xpath://input[contains(@id="passwordNext")]
+>>>>>>> 0400ec3ab8a47f654c4701435f64c3c4c17af115
 
 *** Test Cases ***
 Test Upload file
