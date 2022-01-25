@@ -1,5 +1,6 @@
 *** Settings ***
 Library    Selenium2Library
+Library    requests
 Resource    ../resources/robot_keywords/keywords.robot
 Variables    ../resources/python_support/Calculator.py
 
@@ -36,6 +37,10 @@ Test Iframe
     
     Select Frame    &{LOCATORS}[frame]      
     Check h1 Element    HTML Tutorial 
+    
+    Wait Until Element Is Enabled    &{LOCATORS}[jsNav]    
+    Click Element    &{LOCATORS}[jsNav]  
+    Check h1 Element    JavaScript Tutorial 
     
     Select Window    MAIN    
     Check h1 Element    HTML Iframes      
@@ -74,7 +79,21 @@ Test Popout Windows
     
     Select Window    @{windowHandle}[0]
     ${pageTitle}=    Get Title
-    Should Contain    ${pageTitle}    Open a New Browser Window      
+    Should Contain    ${pageTitle}    Open a New Browser Window   
+    
+Test API
+    [Tags]    api_test
+    
+    ${pageTitle}=    Navigate To URL    &{LINKS}[any_api]        
+    Should Contain    ${pageTitle}   AnyAPI  
+    
+    @{leftNavList}=    Get WebElements    &{LOCATORS}[leftNav]    
+    :FOR    ${nav}    IN    @{leftNavList}
+    \    Wait Until Element Is Enabled    ${nav}    
+    \    Click Element    ${nav}    
+    \    ${location}=    Get Location
+    \    ${re}=    Get    ${location}    timeout:5     
+    \    Should Be Equal As Integers    ${re.status_code}       200
     
 Basic Calculator
     [Tags]    call_method_test
