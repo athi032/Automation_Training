@@ -1,0 +1,7 @@
+robotframework-archivelibrary==0.4
+robotframework-faker==3.0.0
+robotframework-pabot==0.56
+robotframework-selenium2library
+robotframework==3.0.2
+selenium==3.141.0
+ImageHash
