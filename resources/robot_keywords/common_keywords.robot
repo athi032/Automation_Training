@@ -2,8 +2,7 @@
 Library    Selenium2Library
 
 *** Variables ***
-${BROWSER}=    chrome
-${EXE_PATH}=    E:\\FSoft\\Selenium\\chromedriver_win32\\chromedriver.exe
+${BROWSER}=    chrome 
 
 ${W3_UPLOAD_FILE}=    https://www.w3schools.com/howto/howto_html_file_upload_button.asp
 ${W3_IFRAME}=    https://www.w3schools.com/html/html_iframe.asp
@@ -45,8 +44,8 @@ Common Test Teardown
 Common Test Setup
     Log    This is Test Setup 
     
-    [Arguments]    ${browser}   ${exe_path}   
-    Create Webdriver   ${browser}    executable_path=${exe_path}
+    [Arguments]    ${browser}
+    Create Webdriver   ${browser}
     Set Browser Implicit Wait    5s
     Maximize Browser Window      
 

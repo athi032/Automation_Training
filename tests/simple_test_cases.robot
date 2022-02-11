@@ -8,7 +8,7 @@ Variables    ../resources/python_support/calculator.py
 Suite Setup    Common Suite Setup
 Suite Teardown    Common Suite Teardown  
 
-Test Setup    Common Test Setup   ${BROWSER}    ${EXE_PATH}
+Test Setup    Common Test Setup   ${BROWSER}
 Test Teardown    Common Test Teardown 
 
 Default Tags    d_tag
