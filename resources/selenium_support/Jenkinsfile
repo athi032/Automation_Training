@@ -4,23 +4,19 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building'
+                echo 'Building Robot Framework'
+            }
+        } 
+        stage('Run Avatar Test') {
+            steps {
+                echo 'Run Show Message Test'
+                bat 'robot -d log --i avatar_test tests/github_test_cases.robot'
             }
         }
-        stage('Deploy') {
+        stage('Run Show Message Test') {
             steps {
-                echo 'Deploying'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing'
-            }
-        }
-        stage('Run Selenium Tests') {
-            steps {
-                echo 'Run Selenium Tests'
-                bat 'python tests/selenium_in_jenkins_pipeline_demo.py'
+                echo 'Run Show Message Test'
+                bat 'robot -d log --i show_message tests/github_test_cases.robot'
             }
         }
     }

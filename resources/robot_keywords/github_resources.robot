@@ -16,7 +16,7 @@ ${VERIFY_BTN}=    xpath://button[contains(., 'Verify')]
 ${AVA_SMALL}=    css:img.avatar.avatar-small.circle
 
 ${BLUE_IMG}=    ${CURDIR}\\images\\blueOcean.jpeg
-${WRONG_IMG}=    ${CURDIR}\\resources\\images\\blueOcean.bmp
+${WRONG_IMG}=    ${CURDIR}\\images\\blueOcean.bmp
 ${IMG_AFTER_CHANGED}=    avaAfter.png
 ${IMG_BEFORE_CHANGED}=    avaBefore.png
 ${CHROME_PROFILE_PATH}=    --user-data-dir=C:\\Users\\Admin\\AppData\\Local\\Google\\Chrome\\User Data\\Default
